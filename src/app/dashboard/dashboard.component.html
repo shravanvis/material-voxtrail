@@ -1,0 +1,364 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <!-- <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-12">
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+              
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+              
+          </div>
+      </div> -->
+      <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                  <div class="card-header card-header-warning card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">directions_car</i>
+                      </div>
+                      <p class="card-category">Total Vehicles</p>
+                      <h3 class="card-title">14
+                          <!-- <small>GB</small> -->
+                      </h3>
+                  </div>
+                  <div class="card-footer">
+                      <!-- <div class="stats">
+                          <i class="material-icons text-danger">warning</i>
+                          <a href="javascript:void(0)">Get More Space...</a>
+                      </div> -->
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                  <div class="card-header card-header-success card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">swap_vert</i>
+                      </div>
+                      <p class="card-category">Running Vehicles</p>
+                      <h3 class="card-title">1</h3>
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          <!-- <i class="material-icons">date_range</i> Last 24 Hours -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                  <div class="card-header card-header-danger card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">stop</i>
+                      </div>
+                      <p class="card-category">Idle Vehicles</p>
+                      <h3 class="card-title">5</h3>
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          <!-- <i class="material-icons">local_offer</i> Tracked from Github -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                  <div class="card-header card-header-info card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">power_off</i>
+                      </div>
+                      <p class="card-category">Offline Vehicles</p>
+                      <h3 class="card-title">8</h3>
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          <!-- <i class="material-icons">update</i> Just Updated -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+            <div class="col-lg-6 col-md-12">
+            <div class="card">
+                <div class="card-header card-header-tabs card-header-primary">
+                    <div class="nav-tabs-navigation">
+                        <div class="nav-tabs-wrapper">
+                            <div class="row">
+                                <div class="col-sm">
+                                        <h4 class="card-title">Status of Maps :</h4>
+                                </div>
+                                <div class="col-sm">
+                                    <ul class="nav nav-tabs" data-tabs="tabs">
+                                        <li class="nav-item">
+                                            <a mat-button class="nav-link active" href="#profile" data-toggle="tab">
+                                                <i class="material-icons">search</i>
+                                                <div class="ripple-container"></div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a mat-button class="nav-link" href="#messages" data-toggle="tab">
+                                                <i class="material-icons">location_on</i>
+                                                <div class="ripple-container"></div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a mat-button class="nav-link" href="#settings" data-toggle="tab">
+                                                <i class="material-icons">crop_free</i>
+                                                <div class="ripple-container"></div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <app-maps></app-maps>
+                </div>
+            </div>
+        </div>
+          <div class="col-lg-6 col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-warning">
+                      <h4 class="card-title">Vehicles List</h4>
+                      <!-- <p class="card-category">New employees on 15th September, 2016</p> -->
+                  </div>
+                  <div class="card-body table-responsive">
+                      <div class="row"> 
+                    <div class="col-sm">
+                         <!--Dropdown primary-->
+                        <div class="dropdown">
+                                <!--Trigger-->
+                                <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" 
+                                    aria-haspopup="true" aria-expanded="false">Group</button>
+                                <!--Menu-->
+                                <div class="dropdown-menu dropdown-warning">
+                                    <a class="dropdown-item" href="#">Group</a>
+                                </div>
+                            </div>
+                            <!--/Dropdown primary-->
+                     </div>
+                     <div class="col-sm">
+                        
+                        
+                        <!-- Material input -->
+                        <!-- <div class="md-form">
+                            <input type="text" id="form1" class="form-control">
+                            <label for="form1">Search</label> 
+                        </div>   -->
+                    
+                        <label for="typeahead-basic">Search :</label>
+                        <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search"/>
+                    
+                        <!-- <pre>Model: {{ model | json }}</pre> -->
+                    
+                    
+                    </div>
+                     
+                     <div class="col-sm">
+                            <a mat-button class="nav-link active" href="#profile" data-toggle="tab">
+                                    <i class="material-icons">computer</i>
+                                    <div class="ripple-container"></div>
+                            </a>
+                     </div>
+                    </div>
+                    
+                    <!-- <div class="heading">Device Details</div> -->
+                    <h3 class="h3-responsive">Device Details</h3>
+
+                      <table class="table table-hover">
+                          <thead class="text-warning">
+                              <!-- <th>ID</th> -->
+                              <!-- <th>Name</th> -->
+                              <!-- <th>Salary</th> -->
+                              <!-- <th>Country</th> -->
+                          </thead>
+                          <tbody>
+                              <tr>
+                                    <a mat-button class="nav-link active" href="#profile" data-toggle="tab">
+                                            <i class="material-icons">directions_car</i>
+                                            <div class="ripple-container"></div>
+                                    </a>
+                                  
+                              </tr>
+                              <tr>
+                                  <td>2</td>
+                                  <td>Minerva Hooper</td>
+                                  <td>$23,789</td>
+                                  <td>Curaçao</td>
+                              </tr>
+                              <tr>
+                                  <td>3</td>
+                                  <td>Sage Rodriguez</td>
+                                  <td>$56,142</td>
+                                  <td>Netherlands</td>
+                              </tr>
+                              <tr>
+                                  <td>4</td>
+                                  <td>Philip Chaney</td>
+                                  <td>$38,735</td>
+                                  <td>Korea, South</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <!-- <div class="col-lg-6 col-md-12"> -->
+              <div class=col-sm>
+              <div class="card">
+                  <div class="card-header card-header-tabs card-header-primary">
+                      <div class="nav-tabs-navigation">
+                          <div class="nav-tabs-wrapper">
+                              <!-- <span class="nav-tabs-title">Top 10 Expiring Objects</span> -->
+                              <h4 class="card-title">Top 10 Expiring Objects</h4>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card-body">
+                      <div class="tab-content">
+                          <div class="tab-pane active" id="profile">
+                          
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                        <thead class="text-warning">
+                                          <tr>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">IMEI</th>
+                                            <th scope="col">SIM card</th>
+                                            <th scope="col">Active</th>
+                                            <th scope="col">Expires on</th>
+                                            <th scope="col">Last connection</th>
+                                          </tr>
+                                        </thead>
+                                        
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row" class="text-warning">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                            <td>nadsb</td>
+                                            <td>nadsb</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row" class="text-warning">2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                            <td>nadsb</td>
+                                            <td>nadsb</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row" class="text-warning">3</th>
+                                            <td>Larry</td>
+                                            <td>the Bird</td>
+                                            <td>@twitter</td>
+                                            <td>nadsb</td>
+                                            <td>nadsb</td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row" class="text-warning">4</th>
+                                            <td>Larry</td>
+                                            <td>the Bird</td>
+                                            <td>@twitter</td>
+                                            <td>nadsb</td>
+                                            <td>nadsb</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+            <div class="col-lg-6 col-md-12">
+          <div class="card">
+                <div class="card-header card-header-tabs card-header-primary">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <!-- <span class="nav-tabs-title">Top 10 Expiring Objects</span> -->
+                                <h4 class="card-title">Event Notifications</h4>
+                            </div>
+                        </div>
+                    </div>
+              <div class="card-body">
+                  <div class="tab-content">
+                    <ul class="list-group">
+                            <li class="list-group-item">
+                                    <div class="md-v-line"></div><i class="fas fa-bomb mr-5 fa-2x"></i>
+                                    Mayra Sibley
+                                  Scorpio S7 Device -- Overspeed
+                                  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <small>2019-06-17 04:45:25</small>
+                                  </li>
+                            <hr class="h4-responsive">
+                            <li class="list-group-item">
+                              <div class="md-v-line"></div><i class="fas fa-car mr-5 fa-2x"></i>
+                              Mayra Sibley
+                            Scorpio S7 Device -- Overspeed
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <small>2019-06-17 04:45:25</small>
+                            </li>
+                            <hr>
+                            <li class="list-group-item">
+                              <div class="md-v-line"></div><i class="fas fa-car mr-5 fa-2x"></i>
+                              Mayra Sibley
+                            Scorpio S7 Device -- Overspeed
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <small>2019-06-17 04:45:25</small>
+                            </li>
+                            <hr>
+                            <li class="list-group-item">
+                              <div class="md-v-line"></div><i class="fas fa-car mr-5 fa-2x"></i>
+                              Mayra Sibley
+                            Scorpio S7 Device -- Overspeed
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <small>2019-06-17 04:45:25</small>
+                            </li>
+                            <hr>
+                            <li class="list-group-item">
+                              <div class="md-v-line"></div><i class="fas fa-car mr-5 fa-2x"></i>
+                              Mayra Sibley
+                            Scorpio S7 Device -- Overspeed
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <small>2019-06-17 04:45:25</small>
+                            </li>
+                          </ul>
+                        </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+

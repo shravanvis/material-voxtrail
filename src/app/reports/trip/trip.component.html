@@ -1,0 +1,98 @@
+<div class="container-fluid">
+    <div class="card">
+       <div class="card-header card-header-warning">
+           <h4 class="card-title">Trip Report</h4>
+       </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm">
+             <h4>Select Vehicles :</h4>
+             <mat-form-field style="size: 50rem">
+               <!-- <mat-label>Select Vehicles</mat-label> -->
+               <mat-select style="size: 50rem" multiple search="search here" placeholder="Select here for vehicle">
+                 <mat-option *ngFor="let Vehicle of Vehicles" [value]="Vehicle.value">
+                   {{Vehicle.viewValue}}
+                 </mat-option>
+               </mat-select>
+             </mat-form-field>
+          </div>
+          
+          <div class="col-sm">
+             <form class="form-inline">
+                 <div class="form-group">
+                   <div class="input-group">
+                     <input class="form-control" placeholder="yyyy-mm-dd"
+                            name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                     <div class="input-group-append">
+                       <button class="btn btn-outline-secondary calendar btn-sm" (click)="d.toggle()" type="button"><i class="material-icons">date_range</i></button>
+                     </div>
+                   </div>
+                 </div>
+               </form>
+               
+               
+               <!-- <pre>Model: {{ model | json }}</pre> -->
+          </div>
+
+          <div class="col-sm">
+              <!--Dropdown primary-->
+                <div class="dropdown">
+  
+                    <!--Trigger-->
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">Set stop duration </button>
+                  
+                    <!--Menu-->
+                    <div class="dropdown-menu dropdown-primary">
+                      <a class="dropdown-item">5 minutes</a>
+                      <a class="dropdown-item">15 minutes</a>
+                      <a class="dropdown-item">30 minutes</a>
+                      <a class="dropdown-item">1 hour</a>
+                    </div> 
+                  </div>
+                  <!--/Dropdown primary-->
+            </div>
+            
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="card">
+     <div class="card-header card-header-warning">
+       <h4 class="card-title"></h4>
+   </div>
+   
+   <div class="card-body">
+       <div class="col-xs-2">
+         <input type="text" class="form-control" placeholder="Search">
+     <table class="table">
+     <thead>
+       <tr>
+         <th scope="col" class="text-primary">Device Name</th>
+         <th scope="col" class="text-primary">Trip Start</th>
+         <th scope="col" class="text-primary">Trip End</th>
+         <th scope="col" class="text-primary">Trip Length (Km)</th>
+         <th scope="col" class="text-primary">Move Duration</th>
+         <th scope="col" class="text-primary">Stop Duration</th>
+         <th scope="col" class="text-primary">Stop Count</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td>--</td>
+         <td>--</td>
+         <td>No</td>
+         <td>DATA</td>
+         <td>--</td>
+         <td>--</td>
+         <td>--</td>
+       </tr>
+       <tr>
+       </tr>
+       <tr>
+       </tr>
+     </tbody>
+   </table>
+   </div>
+  </div>

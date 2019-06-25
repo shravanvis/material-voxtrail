@@ -1,0 +1,32 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <!-- <p>
+        reports works!
+      </p> -->
+
+            <!--Dropdown primary-->
+            <div class="dropdown">
+              <!--Trigger-->
+              <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" 
+                  aria-haspopup="true" aria-expanded="false">Reports</button>
+              <!--Menu-->
+              <div class="dropdown-menu dropdown-warning">
+                <a class="dropdown-item" [routerLink]="['/reports/general-info-report']" routerLinkActive="router-link-active" >General Infromation Report</a>
+                <a class="dropdown-item" [routerLink]="['/reports/daily-report']" routerLinkActive="router-link-active" >Daily Report</a>
+                <a class="dropdown-item" [routerLink]="['/reports/zone_In-out-report']" routerLinkActive="router-link-active" >Zone In-out Report</a>
+                <a class="dropdown-item" [routerLink]="['/reports/drives&stops-report']" routerLinkActive="router-link-active" >Drives & Stops Report</a>
+                <a class="dropdown-item" [routerLink]="['/reports/overspeed-report']" routerLinkActive="router-link-active" >Overspeed Report</a>
+                <a class="dropdown-item" [routerLink]="['/reports/drive-score-report']" routerLinkActive="router-link-active" >Drive Score Report</a>
+                <a class="dropdown-item" [routerLink]="['/reports/sensor-report']" routerLinkActive="router-link-active" >Sensor Report</a>
+                <a class="dropdown-item" [routerLink]="['/reports/trip-report']" routerLinkActive="router-link-active" >Trip Report</a>
+              </div>
+            </div>
+            <!--/Dropdown primary-->
+
+            <router-outlet></router-outlet>
+
+      
+      
+  </div>
+</div>
+

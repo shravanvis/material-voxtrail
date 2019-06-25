@@ -1,0 +1,102 @@
+<div class="container-fluid">
+    <div class="card">
+       <div class="card-header card-header-warning">
+           <h4 class="card-title">Zone In-Out Report</h4>
+       </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm">
+             <h4>Select Vehicles :</h4>
+             <mat-form-field style="size: 50rem">
+               <!-- <mat-label>Select Vehicles</mat-label> -->
+               <mat-select style="size: 50rem" multiple search="search here">
+                 <mat-option *ngFor="let Vehicle of Vehicles" [value]="Vehicle.value">
+                   {{Vehicle.viewValue}}
+                 </mat-option>
+               </mat-select>
+             </mat-form-field>
+          </div>
+          <div class="col-sm">
+              <h4>Select Zone :</h4>
+              <mat-form-field style="size: 50rem">
+                <!-- <mat-label>Select Vehicles</mat-label> -->
+                <mat-select style="size: 50rem" multiple search="search here">
+                  <mat-option *ngFor="let Zone of Zones" [value]="Zone.value">
+                    {{Zone.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+           </div>
+          <div class="col-sm">
+             <form class="form-inline">
+                 <div class="form-group">
+                   <div class="input-group">
+                     <input class="form-control" placeholder="yyyy-mm-dd"
+                            name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                     <div class="input-group-append">
+                       <button class="btn btn-outline-secondary calendar btn-sm" (click)="d.toggle()" type="button"><i class="material-icons">date_range</i></button>
+                     </div>
+                   </div>
+                 </div>
+               </form>
+               
+               
+               <!-- <pre>Model: {{ model | json }}</pre> -->
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="card">
+     <div class="card-header card-header-warning">
+       <h4 class="card-title"></h4>
+   </div>
+   
+   <div class="card-body">
+       <div class="col-xs-2">
+         <input type="text" class="form-control" placeholder="Search">
+     <table class="table table-hover-resposive">
+     <thead>
+       <tr>
+         <th scope="col" class="text-warning">Device Name</th>
+         <th scope="col" class="text-warning">Route Start</th>
+         <th scope="col" class="text-warning">Route End</th>
+         <th scope="col" class="text-warning">Route length</th>
+         <th scope="col" class="text-warning">Move Duration</th>
+         <th scope="col" class="text-warning">Stop Duration</th>
+         <th scope="col" class="text-warning">Stop Count</th>
+         <th scope="col" class="text-warning">Top Speed</th>
+         <th scope="col" class="text-warning">Average Speed</th>
+         <th scope="col" class="text-warning">Engine Work</th>
+         <th scope="col" class="text-warning">Engine Idle</th>
+         <th scope="col" class="text-warning">OdoMeter</th>
+         <th scope="col" class="text-warning">Engine Hours</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td>--</td>
+         <td>--</td>
+         <td>--</td>
+         <td>--</td>
+         <td>--</td>
+         <td>No</td>
+         <td>DATA</td>
+         <td>--</td>
+         <td>--</td>
+         <td>--</td>
+         <td>--</td>
+         <td>--</td>
+         <td>--</td>
+       </tr>
+       <tr>
+       </tr>
+       <tr>
+       </tr>
+     </tbody>
+   </table>
+   </div>
+    </div>
+   </div>
+   

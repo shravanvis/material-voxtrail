@@ -1,0 +1,18 @@
+<footer class="footer ">
+    <div class="container-fluid">
+        <nav class="pull-left">
+            <ul>
+                <li>
+                    <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active" >
+                        VoxTrail
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="copyright pull-right">
+            &copy;
+            {{test | date: 'yyyy'}}, 
+            <a  target="_blank">VoxTrail</a> Pvt Ltd.
+        </div>
+    </div>
+</footer>

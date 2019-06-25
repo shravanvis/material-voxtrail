@@ -1,0 +1,94 @@
+<div class="container-fluid">
+    <div class="card">
+       <div class="card-header card-header-warning">
+           <h4 class="card-title">Driver Score Report</h4>
+       </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm">
+             <h4>Select Vehicles :</h4>
+             <mat-form-field style="size: 50rem">
+               <!-- <mat-label>Select Vehicles</mat-label> -->
+               <mat-select style="size: 50rem" multiple search="search here" placeholder="Select here for vehicle">
+                 <mat-option *ngFor="let Vehicle of Vehicles" [value]="Vehicle.value">
+                   {{Vehicle.viewValue}}
+                 </mat-option>
+               </mat-select>
+             </mat-form-field>
+          </div>
+
+          <div class="col-sm">
+              <form class="example-form">
+                  <mat-form-field class="example-full-width" style="color: black;">
+                    <input type="number" class="form-control" matInput placeholder="Search here for Vehicles" style="color: black;">
+                  </mat-form-field>
+              </form>
+          </div>
+          
+          <div class="col-sm">
+             <form class="form-inline">
+                 <div class="form-group">
+                   <div class="input-group">
+                     <input class="form-control" placeholder="yyyy-mm-dd"
+                            name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                     <div class="input-group-append">
+                       <button class="btn btn-outline-secondary calendar btn-sm" (click)="d.toggle()" type="button"><i class="material-icons">date_range</i></button>
+                     </div>
+                   </div>
+                 </div>
+               </form>
+               
+               
+               <!-- <pre>Model: {{ model | json }}</pre> -->
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="card">
+     <div class="card-header card-header-warning">
+       <h4 class="card-title"></h4>
+   </div>
+   
+   <div class="card-body">
+       <div class="col-xs-2">
+         <input type="text" class="form-control" placeholder="Search">
+     <table class="table">
+     <thead>
+       <tr>
+         <th scope="col" class="text-primary">Driver Name</th>
+         <th scope="col" class="text-primary">Vehicle Name</th>
+         <th scope="col" class="text-primary">Route Length</th>
+         <th scope="col" class="text-primary">Overspeed Duration</th>
+         <th scope="col" class="text-primary">Overspeed Score</th>
+         <th scope="col" class="text-primary">Haccel Count</th>
+         <th scope="col" class="text-primary">Hbrake Count</th>
+         <th scope="col" class="text-primary">Hbrake Score</th>
+         <th scope="col" class="text-primary">Hcorn Count</th>
+         <th scope="col" class="text-primary">Hcount Score</th>
+         <th scope="col" class="text-primary">RAG</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td>--</td>
+         <td>--</td>
+         <td>--</td>
+         <td>No</td>
+         <td>DATA</td>
+         <td>--</td>
+         <td>--</td>
+         <td>--</td>
+         <td>--</td>
+         <td>--</td>
+         <td>--</td>
+       </tr>
+       <tr>
+       </tr>
+       <tr>
+       </tr>
+     </tbody>
+   </table>
+   </div>
+  </div>

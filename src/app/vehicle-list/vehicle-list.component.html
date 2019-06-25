@@ -1,0 +1,184 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <!-- Editable table -->
+<div class="card">
+    <div class="card-header card-header-primary text-center">
+        <h4 class="card-title">List</h4>
+        
+    </div>
+    <!-- <h3 class="card-header text-center font-weight-bold text-uppercase py-4">List</h3> -->
+    <div class="card-body">
+      <div id="table" class="table-editable">
+        <span class="table-add float-left mb-3 mr-2">
+          <a class="text-success" (click)="add()">
+            <!-- <mdb-icon fas icon="plus" size="2x"></mdb-icon> -->
+            <!-- <i class="fas fa-plus"></i>Add New Device -->
+            <button data-toggle="modal" type="button" data-target="#elegantModalForm" class="btn btn-success"><i class="fas fa-plus"></i>   Add New Device</button>
+          </a>
+        </span>
+        <span class="table-search float-right mb-3 mr-2">
+            <div class="md-form">
+                <input placeholder="Search" type="text" id="form1" class="form-control">
+                <!-- <label for="form1">Example label</label> -->
+              </div>
+        </span>
+
+
+
+
+
+
+        
+<!-- Modal -->
+<div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <!--Content-->
+    <div class="modal-content form-elegant">
+      <!--Header-->
+      <div class="modal-header text-center">
+        <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-3" id="myModalLabel"><strong>Add Vehicle</strong></h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body mx-4">
+        <!--Body-->
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right">Device Name</label>
+          <input type="text" id="Form-email1" class="form-control validate" placeholder="Enter Device Name">
+        </div>
+
+        <div class="md-form pb-3">
+        <label data-error="wrong" data-success="right" for="Form-pass1">Device IMEI</label>
+          <input type="text" id="Form-pass1" class="form-control validate" placeholder="Enter IMEI">
+        </div>
+
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+            <label class="custom-control-label" for="defaultUnchecked">Is Object Expiry</label>
+        </div>
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm">
+                <!--Dropdown primary-->
+                <div class="dropdown">
+
+                    <label>Choose Group</label>
+                      <!--Trigger-->
+                      <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenu1" data-toggle="dropdown" 
+                          aria-haspopup="true" aria-expanded="false">Group</button>
+                      <!--Menu-->
+                      <div class="dropdown-menu dropdown-primary">
+                          <a class="dropdown-item">Group</a>
+                      </div>
+                  </div>
+                  <!--/Dropdown primary-->
+            </div>
+            <div class="col-sm">
+              <!--Dropdown primary-->
+              <div class="dropdown">
+
+                  <label>Object Type&nbsp;&nbsp;</label>
+                    <!--Trigger-->
+                    <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenu1" data-toggle="dropdown" 
+                        aria-haspopup="true" aria-expanded="false">Type</button>
+                    <!--Menu-->
+                    <div class="dropdown-menu dropdown-primary">
+                        <a class="dropdown-item">Bike</a>
+                        <a class="dropdown-item">Car</a>
+                        <a class="dropdown-item">Bus</a>
+                        <a class="dropdown-item">Truck</a>
+                        
+                    </div>
+                </div>
+                <!--/Dropdown primary-->
+            </div>
+          </div>
+        </div>
+        
+
+        <span>
+            <div class="text-center mb-3">
+              <button type="button" class="btn btn-danger"  color="danger" rounded="true" size="sm">ADD</button>
+            </div>  
+        </span>
+      </div>
+      <!--Footer-->
+      
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Modal -->
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <tr>
+            <th class="text-center">Name</th>
+            <th class="text-center">IMEI</th>
+            <th class="text-center">SIM Number</th>
+            <th class="text-center">Status</th>
+            <th class="text-center">Group Name</th>
+            <th class="text-center">Action</th>
+            <th class="text-center">Remove</th>
+          </tr>
+          <tr *ngFor="let person of personList; let id = index">
+            <td>
+              <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)" contenteditable="true">{{person.name}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)" (blur)="updateList(id, 'age', $event)">{{person.age}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)" (blur)="updateList(id, 'companyName', $event)">{{person.companyName}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)" (blur)="updateList(id, 'country', $event)">{{person.country}}</span>
+            </td>
+            <td>
+              <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</span>
+            </td>
+            <td>
+              <span class="table-up">
+                <a class="indigo-text">
+                  <!-- <mdb-icon fas icon="long-arrow-alt-up"></mdb-icon> -->
+                  <i class="fas fa-long-arrow-alt-up"></i>
+                </a>
+              </span>
+              <span class="table-down">
+                <a class="indigo-text">
+                  <!-- <mdb-icon fas icon="long-arrow-alt-down"></mdb-icon> -->
+                  <i class="fas fa-long-arrow-alt-down"></i>
+                </a>
+              </span>
+            </td>
+            <td>
+              <span class="table-remove">
+                <button type="button" class="btn btn-danger"  color="danger" rounded="true" size="sm"  (click)="remove(id)">Remove</button>
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Editable table -->        
+  </div>
+</div>
+
